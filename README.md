@@ -1,0 +1,13 @@
+## 各ファイルの説明 
+ - index.html HTMLファイルです
+ - main.css index.htmlのcssファイルです
+ - canvastest.js canvasの見た目を確認するための基本的な描画を行うJavaScriptファイルです
+ - canvas1.js 基本的な描画の例を示すJavaScriptファイルです
+ - canvas2.js 直線描画の例を示すJavaScriptファイルです
+ - canvas3.js 円描画の例を示すJavaScriptファイルです
+ - text.js テキスト描画の例を示すJavaScriptファイルです
+ - move.js canvas内での移動・回転の例を示すJavaScriptファイルです
+ - color.js canvas内でクリックやマウス操作による色変化のアニメーションを示すJavaScriptファイルです
+ - circle.js 軌道上を円が動くアニメーションを実装したJavaScriptファイルです
+ - anime.js canvas内でのマウス操作によるアニメーションの制御を示すJavaScriptファイルです
+ - images フォルダ内にはHTMLで使用される画像ファイルが含まれています
