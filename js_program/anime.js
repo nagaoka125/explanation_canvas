@@ -1,8 +1,6 @@
 const canvas_anime = document.getElementById("canvasanime");
 const ctx_anime = canvas_anime.getContext("2d");
 
-let animetion;
-
 const square_anime = {
     x: canvas_anime.width / 2,
     y: canvas_anime.height / 2,
@@ -31,11 +29,11 @@ function draw() {
     if (square_anime.y + square_anime.size > canvas_anime.height - square_anime.size || square_anime.y < square_anime.size) {
         square_anime.vy = -square_anime.vy; // y方向の速度を反転
     }
-    animation = requestAnimationFrame(draw);
+    requestAnimationFrame(draw);
 }
 // canvas内にマウスが乗ったときにアニメーションを開始
 canvas_anime.addEventListener("mouseenter", () => {
-    animetion = requestAnimationFrame(draw);
+    requestAnimationFrame(draw);
 });
 
 // canvas内で左クリックしたときに速度を増加
@@ -55,10 +53,7 @@ canvas_anime.addEventListener("contextmenu", (event) => {
 
 // canvasからマウスが離れたときにアニメーションを停止
 canvas_anime.addEventListener("mouseleave", () => {
-    if (animetion) {
         cancelAnimationFrame(animetion);
-        animetion = null;
-    }
 });
 
 square_anime.draw();
