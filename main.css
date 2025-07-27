@@ -9,7 +9,7 @@ h2{
         text-align: left;
         font-family: "Noto Sans JP", sans-serif;
         font-size: 25px;
-        margin: 3em 3em;
+        margin: 3em auto;
         padding: 0.5em;
         line-height: 2.0;
         background: #7ea3f9;
@@ -21,11 +21,11 @@ h3{
         text-align: left;
         font-family: "Noto Sans JP", sans-serif;
         font-size: 20px;
-        margin: 2em 3em;
+        margin: 2em auto;
         padding: 0.5em;
         line-height: 1.8;
-        background: #9a9da3;
-        border-bottom: #11324d 3px solid;
+        background: #7ea3f9;
+        border-bottom: #31a3a3 3px solid;
 }
 
 p{
@@ -33,7 +33,7 @@ p{
         font-family: Arial, sans-serif;
         font-size: 16px;
         line-height: 1.5;
-        margin: 3em 3em;
+        margin: 3em auto;
         padding: 0.5em;
 }
 
@@ -41,7 +41,7 @@ ul{
         color: #668ad8; 
         border: double 5px #668ad8;/*二重線 太さ 色*/
         background: #f1f8ff; 
-        margin: 3em 3em;
+        margin: 3em auto;
         padding: 0.5em 0.5em 0.5em 2em;
 }
 
