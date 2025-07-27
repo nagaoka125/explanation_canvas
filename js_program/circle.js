@@ -1,8 +1,6 @@
 const canvas_circle = document.getElementById("canvascircle");
 const ctx_circle = canvas_circle.getContext("2d");
 
-let flag = true;
-
 const orbitcricle = {
     x: canvas_circle.width / 2,
     y: canvas_circle.height / 2,
@@ -12,7 +10,7 @@ const orbitcricle = {
     color: "#aaf45f",
     draw() {
         ctx_circle.beginPath();
-        ctx_circle.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx_circle.arc(this.x, this.y, this.radius, this.angle, Math.PI * 2);
         ctx_circle.fillStyle = this.color;
         ctx_circle.fill();
         ctx_circle.closePath();
@@ -49,15 +47,5 @@ function draw() {
 
     requestAnimationFrame(draw);
 }
-
-canvas_circle.addEventListener("dblclick", () => {
-    flag = !flag; // フラグを切り替え
-    if (flag) {
-        draw(); // アニメーションを再開
-    } else {
-        ctx_circle.clearRect(0, 0, canvas_circle.width, canvas_circle.height); // キャンバスをクリア
-    }
-});
-
 
 draw(); // アニメーション開始
