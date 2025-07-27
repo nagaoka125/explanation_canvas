@@ -1,0 +1,142 @@
+// canvasを使用した描画の説明
+<html>
+    <head>
+        <mata charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <title>canvasAPIの一部の使用方法の解説</title>
+
+
+    </head>
+
+    <body>
+        <h2>概要</h2>
+        <p> 本ページでは、canvasについてその概要とjavascriptでの一部の基礎的な使用方法，実際に実行した様子を示し，<br>
+            canvasの直線描画, 円描画, テキスト描画, 移動・回転, アニメーションの基礎知識を知ることができます．</p>
+            <img scr="images\HTML5_Logo_128.png" alt="HTML5のロゴ">
+
+        <h2>canvas</h2>
+        <p>canvasはHTML5で導入された描画要素で，JavaScriptなどを使用してグラフィックを描画する領域を作ることができます．<br>
+            canvasでは図形を描画するだけでなく，画像の読み込みやアニメーションを作製することもできます．<br>
+            canvasの座標は左上隅が(0,0)で, X軸が右方向, Y軸が下方向に伸びるようになっています.</p>
+            <img src="images/canvas_example.png" alt="canvasの座標例">
+        <canvas id="canvastest" width="500" height="400"></canvas>
+        <script src="js_program/canvastest.js"></script>
+
+        <h2>canvasの記述方法</h2>
+        <p>HTMLで直接コードを書き込む場合は以下のコードのように記述します．</p>
+
+        <pre>
+            <canvas id="test" width="500", height="400"></canvas>
+            <script>
+                var canvas = document.getElementById('test');
+                var ctx = canvas.getContext('2d');
+                ctx.fillStyle = 'blue';
+                ctx.fillRect(10, 10, 100, 100);
+            </script>
+        </pre>
+
+        <p>Java Scriptファイルを使用する際はHTMLに外部ファイルのコードを埋め込みます．<br>
+            基本的なコード方法はHTMLのものと変わりません．</p>
+
+        <pre>
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle = 'blue';
+            ctx.fillRect(50, 50, 30, 30);
+        </pre>
+        
+        <h2>Java Scriptでのcanvasのメソッド</h2>
+        <p>Java Scriptでcanvasを使用する際のメソッドには以下のようなものがあります．</p>
+        <h3>基礎的なメソッド</h3>
+        <ul>
+            <li>getElementById(canvasid) - HTMLのcanvas要素を取得します．</li>
+            <li>getContext("2d") - 2D描画コンテキストを取得します．</li>
+            <li>fillStyle - 塗りつぶしの色を設定します．</li>
+            <li>strokeStyle - 線の色を設定します．</li>
+            <li>lineWidth - 線の幅を設定します．</li>
+            <li>clearRect(x, y, width, height) - 座標(x, y)に幅width, 高さheightの矩形領域をクリアします．</li>
+            <li>fillRect(x, y, width, height) - 座標(x, y)に幅width, 高さheightの矩形領域を塗りつぶします．</li>
+            <li>strokeRect(x, y, width, height) - 座標(x, y)に幅width, 高さheightの矩形の輪郭を描画します．</li>
+        </ul>
+        <canvas id="canvas1" width="600" height="500"></canvas>
+        <script src="js_program/canvas1.js"></script>
+
+        <h3>直線描画</h3>
+        <ul>
+            <li>beginPath() - 新しいパスを開始します．</li>
+            <li>moveTo(x, y) - 座標(x, y)にパスの開始点を設定します．</li>
+            <li>lineTo(x, y) - 現在のパスから座標(x, y)まで直線を追加します．</li>
+            <li>stroke() - 輪郭をなぞる方法でパスを描画します．</li>
+            <li>closePath() - パスを閉じます．</li>
+            <li>fill() - パスを塗りつぶします．</li>
+        </ul>
+        <canvas id="canvas2" width="600" height="500"></canvas>
+        <script src="js_program/canvas2.js"></script>
+
+        <h3>円描画</h3>
+        <ul>
+            <li>arc(x, y, radius, startAngle, endAngle, anticlockwise) - 円弧を描画します．</li>
+            <li>arc(x, y, 20, 0, Math.pi*2) - 座標(x, y)に半径20pxの円を描画します．</li>
+            <li>arc(x, y, 20, 0, Math.pi, True) - 座標(x, y)に半径20pxの半円を0radから時計回りに描画します．</li>
+            <li>arc(x, y, 20, 0, Math.pi, False) - 座標(x, y)に半径20pxの半円を0radから反時計回りに描画します.</li>
+            <li>arcTo(x1, y1, x2, y2, radius) - 2点間を結ぶ円弧を描画します．</li>
+        </ul>
+        <canvas id="canvas3" width="600" height="500"></canvas>
+        <script scr="js_program/canvas3.js"></script>
+
+        <h3>テキスト描画</h3>
+        <ul>
+            <li>fillText(text, x, y[, maxWidth]) - 座標(x, y)にテキストを描画します．任意で最大描画幅を指定できます.</li>
+            <li>strokeText(text, x, y[, maxWidth]) - 座標(x, y)にテキストの輪郭を描画します．任意で最大描画幅を指定できます.</li>
+            <li>font - テキストのフォントを設定します．</li>
+            <li>textAlign - テキストの配置方法を設定します．</li>
+            <li>textBaseline - テキストの基準線を設定します．</li>
+        </ul>
+        <canvas id="canvastext" width="600" height="500"></canvas>
+        <script src="js_program/text.js"></script>
+
+        <h3>移動・回転</h3>
+        <ul>
+            <li>translate(x, y) - パスの位置を(x, y)だけ移動します．</li>
+            <li>rotate(angle) - パスの向きを指定した角度だけ回転します．</li>
+        </ul>
+        <canvas id="canvasmove" width="600" height="500"></canvas>
+        <script src="js_program/move.js"></script>
+
+        <h3>アニメーション</h3>
+        <ul>
+            <li>requestAnimationFrame(callback) - アニメーションフレームを要求します．</li>
+            <li>setInterval(callback, delay) - delayミリ秒間隔でcallbackを繰り返し実行します．</li>
+            <li>setTimeout(callback, delay) - delayミリ秒後にcallbackを1回だけ実行します．</li>
+            <li>clearInterval(intervalId) - setIntervalで設定した繰り返しを停止します．</li>
+            <li>clearTimeout(timeoutId) - setTimeoutで設定したタイマーを停止します．</li>
+            <li>cancelAnimationFrame(requestId) - requestAnimationFrameで設定したアニメーションを停止します．</li>
+        </ul>
+
+        <canvas id="canvascolor" width="600" height="500"></canvas>
+        <script src="js_program/color.js"></script>
+
+
+        <canvas id="canvascircle" width="600" height="500"></canvas>
+        <script src="js_program/circle.js"></script>
+
+
+
+
+        <canvas id="canvasanime" width="600" height="500"></canvas>
+        <script src="js_program/anime.js"></script>
+
+        <h2>まとめ</h2>
+        <p>canvasはHTML5で導入された描画要素で、JavaScriptを使用してグラフィックを描画することができます．<br>
+            基本的な図形の描画から、アニメーションや画像の操作まで幅広い用途に利用できます．<br>
+            本ページではcanvasの一部の基本的な使用方法とメソッドについて説明しました．</p>
+
+        <h2>参考ページ</h2>
+        <a href="https://developer.mozilla.org/ja/docs/Web/API/Canvas_API/Tutorial">キャンバスのチュートリアル - Web API | MDN</a>
+        <h2>GitHubリポジトリ</h2>
+
+
+        <p>作製時間<br>
+            約xxx分</p>
+    </body>
+</html>
