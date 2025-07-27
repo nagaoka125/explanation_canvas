@@ -36,7 +36,7 @@
         <h2>canvasの記述方法</h2>
         <p>HTMLで直接コードを書き込む場合は以下のコードのように記述します．</p>
 
-        <pre><code>
+        <pre>
             &lt;canvas id="test" width="200" height="150"&gt;
             &lt;script&gt;
                 var canvas = document.getElementById('test');
@@ -44,17 +44,17 @@
                 ctx.fillStyle = 'blue';
                 ctx.fillRect(10, 10, 100, 100);
             &lt;/script&gt;
-        </code></pre>
+        </pre>
 
         <p>Java Scriptファイルを使用する際はHTMLに外部ファイルのコードを埋め込みます．<br>
             基本的なコード方法はHTMLのものと変わりません．</p>
 
-        <pre><code>
+        <pre>
             const canvas = document.getElementById('canvas');
             const ctx = canvas.getContext('2d');
             ctx.fillStyle = 'blue';
             ctx.fillRect(50, 50, 30, 30);
-        </code></pre>
+        </pre>
         
         <h2>Java Scriptでのcanvasのメソッド</h2>
         <p>Java Scriptでcanvasを使用する際のメソッドには以下のようなものがあります．</p>

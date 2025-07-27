@@ -1,8 +1,6 @@
 const canvas_circle = document.getElementById("canvascircle");
 const ctx_circle = canvas_circle.getContext("2d");
 
-let circle = null;
-
 const orbitcricle = {
     x: canvas_circle.width / 2,
     y: canvas_circle.height / 2,
@@ -50,9 +48,7 @@ function draw() {
     orbitcricle.angle += orbitcricle.v;
     }
 
-    circle = requestAnimationFrame(draw);
+    requestAnimationFrame(draw);
 }
 
-orbit.draw(); // 軌道の円を初期描画
-orbitcricle.draw(); // 軌道上の円を初期描画 
 draw(); // アニメーション開始
