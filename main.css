@@ -6,7 +6,7 @@ body{
 
 h2{
         color: #064beb;
-        text-align: right;
+        text-align: left;
         font-family: "Noto Sans JP", sans-serif;
         font-size: 25px;
         margin: 3em 3em;
@@ -16,18 +16,32 @@ h2{
         border-bottom: #31a3a3 5px solid;
 }
 
+h3{
+        color: #064beb;
+        text-align: left;
+        font-family: "Noto Sans JP", sans-serif;
+        font-size: 20px;
+        margin: 2em 3em;
+        padding: 0.5em;
+        line-height: 1.8;
+        background: #9a9da3;
+        border-bottom: #11324d 3px solid;
+}
+
 p{
         color: #0d0443;
         font-family: Arial, sans-serif;
         font-size: 16px;
         line-height: 1.5;
-        margin: 0.5em 0;
+        margin: 3em 3em;
+        padding: 0.5em;
 }
 
 ul{
         color: #668ad8; 
         border: double 5px #668ad8;/*二重線 太さ 色*/
         background: #f1f8ff; 
+        margin: 3em 3em;
         padding: 0.5em 0.5em 0.5em 2em;
 }
 
