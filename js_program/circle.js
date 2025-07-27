@@ -6,11 +6,11 @@ const orbitcricle = {
     y: canvas_circle.height / 2,
     radius: 15,
     angle: 0,
-    v: 0.5,
+    v: 0.05,
     color: "#aaf45f",
     draw() {
         ctx_circle.beginPath();
-        ctx_circle.arc(this.x, this.y, this.radius, this.angle, Math.PI * 2);
+        ctx_circle.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         ctx_circle.fillStyle = this.color;
         ctx_circle.fill();
         ctx_circle.closePath();
@@ -45,7 +45,7 @@ function draw() {
     // 角度を更新
     orbitcricle.angle += orbitcricle.v;
 
-    requestAnimationFrame(draw);
+    window.requestAnimationFrame(draw);
 }
 
 draw(); // アニメーション開始

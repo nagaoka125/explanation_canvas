@@ -23,11 +23,25 @@ function draw() {
     square_anime.y += square_anime.vy;
 
     // canvasの端に到達したら反転
-    if (square_anime.x + square_anime.size > canvas_anime.width - square_anime.size || square_anime.x < square_anime.size) {
+    // 右端がcanvasの右端を超えた場合、または左端がcanvasの左端を下回った場合
+    if (square_anime.x + square_anime.size > canvas_anime.width || square_anime.x < 0) {
         square_anime.vx = -square_anime.vx; // x方向の速度を反転
+        // 壁に食い込まないように位置を調整
+        if (square_anime.x + square_anime.size > canvas_anime.width) {
+            square_anime.x = canvas_anime.width - square_anime.size;
+        } else if (square_anime.x < 0) {
+            square_anime.x = 0;
+        }
     }
-    if (square_anime.y + square_anime.size > canvas_anime.height - square_anime.size || square_anime.y < square_anime.size) {
+    // 下端がcanvasの下端を超えた場合、または上端がcanvasの上端を下回った場合
+    if (square_anime.y + square_anime.size > canvas_anime.height || square_anime.y < 0) {
         square_anime.vy = -square_anime.vy; // y方向の速度を反転
+        // 壁に食い込まないように位置を調整
+        if (square_anime.y + square_anime.size > canvas_anime.height) {
+            square_anime.y = canvas_anime.height - square_anime.size;
+        } else if (square_anime.y < 0) {
+            square_anime.y = 0;
+        }
     }
     requestAnimationFrame(draw);
 }
@@ -53,7 +67,7 @@ canvas_anime.addEventListener("contextmenu", (event) => {
 
 // canvasからマウスが離れたときにアニメーションを停止
 canvas_anime.addEventListener("mouseleave", () => {
-        cancelAnimationFrame(animetion);
+    cancelAnimationFrame(draw);
 });
 
 square_anime.draw();
