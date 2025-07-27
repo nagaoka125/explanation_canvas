@@ -31,7 +31,7 @@
         <p>HTMLで直接コードを書き込む場合は以下のコードのように記述します．</p>
 
         <pre>
-            <canvas id="test" width="200", height="150"></canvas>
+            <canvas id="test" width=200, height=150></canvas>
             <script>
                 var canvas = document.getElementById('test');
                 var ctx = canvas.getContext('2d');
@@ -63,7 +63,7 @@
             <li>fillRect(x, y, width, height) - 座標(x, y)に幅width, 高さheightの矩形領域を塗りつぶします．</li>
             <li>strokeRect(x, y, width, height) - 座標(x, y)に幅width, 高さheightの矩形の輪郭を描画します．</li>
         </ul>
-        <canvas id="canvas1" width="400" height=auto></canvas>
+        <canvas id="canvas1" width=400 height=300></canvas>
         <script src="js_program/canvas1.js"></script>
 
         <h3>直線描画</h3>
@@ -75,7 +75,7 @@
             <li>closePath() - パスを閉じます．</li>
             <li>fill() - パスを塗りつぶします．</li>
         </ul>
-        <canvas id="canvas2" width="400" height=auto></canvas>
+        <canvas id="canvas2" width=400 height=300></canvas>
         <script src="js_program/canvas2.js"></script>
 
         <h3>円描画</h3>
@@ -86,7 +86,7 @@
             <li>arc(x, y, 20, 0, Math.pi, False) - 座標(x, y)に半径20pxの半円を0radから反時計回りに描画します.</li>
             <li>arcTo(x1, y1, x2, y2, radius) - 2点間を結ぶ円弧を描画します．</li>
         </ul>
-        <canvas id="canvas3" width="400" height=auto></canvas>
+        <canvas id="canvas3" width=400 height=300></canvas>
         <script scr="js_program/canvas3.js"></script>
 
         <h3>テキスト描画</h3>
@@ -97,7 +97,7 @@
             <li>textAlign - テキストの配置方法を設定します．</li>
             <li>textBaseline - テキストの基準線を設定します．</li>
         </ul>
-        <canvas id="canvastext" width="400" height=auto></canvas>
+        <canvas id="canvastext" width=400 height=300></canvas>
         <script src="js_program/text.js"></script>
 
         <h3>移動・回転</h3>
@@ -105,7 +105,7 @@
             <li>translate(x, y) - パスの位置を(x, y)だけ移動します．</li>
             <li>rotate(angle) - パスの向きを指定した角度だけ回転します．</li>
         </ul>
-        <canvas id="canvasmove" width="400" height=auto></canvas>
+        <canvas id="canvasmove" width=400 height=300></canvas>
         <script src="js_program/move.js"></script>
 
         <h3>アニメーション</h3>
@@ -120,16 +120,16 @@
 
         <p>canvas内でクリックすると1秒ごとに正方形の色が変化し,もう一度クリックするかマウスが離れるとアニメーションが停止されます．</p>
         </p>
-        <canvas id="canvascolor" width="400" height=auto></canvas>
+        <canvas id="canvascolor" width=400 height=300></canvas>
         <script src="js_program/color.js"></script>
 
         <p>軌道上を円が動くアニメーション．</p>
-        <canvas id="canvascircle" width="400" height=auto></canvas>
+        <canvas id="canvascircle" width=400 height=300></canvas>
         <script src="js_program/circle.js"></script>
 
         <p>canvas内にマウスカーソルが入るアニメーションが開始され,マウスが離れるとアニメーションが停止されます．<br>
             canvas内を左クリックで加速, 右クリックで減速できます.</p>
-        <canvas id="canvasanime" width="400" height=auto></canvas>
+        <canvas id="canvasanime" width=400 height=300></canvas>
         <script src="js_program/anime.js"></script>
 
         <h2>まとめ</h2>
