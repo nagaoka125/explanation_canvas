@@ -87,12 +87,12 @@ a{
         width: 60%;
         margin: 0 auto;
     }
-    .logo{
-        text-align: center;
-    }
 
-    .canvas_example{
-        text-align: center;
+    .logo img , .canvas_example img{
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
     }
 
     canvas{
@@ -111,14 +111,12 @@ a{
         margin: 0 auto;
     }
 
-    .logo{
-        text-align: center;
+    .logo img , .canvas_example img{
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
     }
-
-    .canvas_example{
-        text-align: center;
-    }
-
 
     canvas{
         border: 5px solid #668ad8;
