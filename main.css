@@ -85,6 +85,7 @@ a{
 @media screen and (max-width: 767px){
     div{
         width: 60%;
+        margin: 0 auto;
     }
     .logo{
         height: auto;
@@ -109,6 +110,7 @@ a{
 @media screen and (min-width: 768px){
     div{
         width: 80%;
+        margin: 0 auto;
     }
 
     .logo{
