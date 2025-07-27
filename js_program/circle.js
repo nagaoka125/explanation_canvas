@@ -46,7 +46,25 @@ function draw() {
     // 角度を更新
     orbitcricle.angle += orbitcricle.v;
 
-    windiw.requestAnimationFrame(draw);
+    requestAnimationFrame(draw);
 }
 
-draw();
+// canvas内でクリックしたときにアニメーションを開始
+canvas_circle.addEventListener("click", () => {
+    if (!orbitcricle.v) {
+        orbitcricle.v = 0.05; // アニメーションを開始
+        draw();
+    } else {
+        orbitcricle.v = 0; // アニメーションを停止
+    }
+});
+
+// canvasからマウスが離れたときにアニメーションを停止
+canvas_circle.addEventListener("mouseout", () => {
+    orbitcricle.v = 0; // アニメーションを停止
+    ctx_circle.clearRect(0, 0, canvas_circle.width, canvas_circle.height); // 描画をクリア
+});
+
+
+orbit.draw(); // 軌道の円を初期描画
+orbitcricle.draw(); // 軌道上の円を初期描画
