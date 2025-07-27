@@ -6,8 +6,8 @@ let animetion;
 const square_anime = {
     x: canvas_anime.width / 2,
     y: canvas_anime.height / 2,
-    vx: 0,
-    vy: 0,
+    vx: 1,
+    vy: 1,
     size: canvas_anime.width / 10,
     color: "#56b4e9",
     draw() {
@@ -58,6 +58,8 @@ canvas_anime.addEventListener("mouseout", () => {
     if (animetion) {
         cancelAnimationFrame(animetion);
         animetion = null;
+        square_anime.vx = 1;
+        square_anime.vy = 1;
     }
 });
 

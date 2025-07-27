@@ -1,6 +1,8 @@
 const canvas_circle = document.getElementById("canvascircle");
 const ctx_circle = canvas_circle.getContext("2d");
 
+let circle = null;
+
 const orbitcricle = {
     x: canvas_circle.width / 2,
     y: canvas_circle.height / 2,
@@ -44,27 +46,41 @@ function draw() {
     orbitcricle.draw();
     
     // 角度を更新
+    if (orbitcricle.v !== 0){// アニメーションが停止している場合は何もしない
     orbitcricle.angle += orbitcricle.v;
+    }
 
-    requestAnimationFrame(draw);
+    circle = requestAnimationFrame(draw);
+}
+
+// アニメーションを開始する関数
+function start() {
+    if (!circle) {
+        requestAnimationFrame(draw);
+    }
 }
 
 // canvas内でクリックしたときにアニメーションを開始
 canvas_circle.addEventListener("click", () => {
-    if (!orbitcricle.v) {
-        orbitcricle.v = 0.05; // アニメーションを開始
-        draw();
-    } else {
+    if (orbitcricle.v !== 0) {
         orbitcricle.v = 0; // アニメーションを停止
+    } 
+    else {
+        orbitcricle.v = 0.05; // アニメーションを開始
+        start();
     }
 });
 
 // canvasからマウスが離れたときにアニメーションを停止
 canvas_circle.addEventListener("mouseout", () => {
     orbitcricle.v = 0; // アニメーションを停止
-    ctx_circle.clearRect(0, 0, canvas_circle.width, canvas_circle.height); // 描画をクリア
+    if (circle === null) {
+        ctx_circle.clearRect(0, 0, canvas_circle.width, canvas_circle.height); // canvasをクリア
+        orbit.draw(); // 軌道の円を再描画
+        orbitcricle.draw(); // 軌道上の円を再描画
+    }
 });
 
 
 orbit.draw(); // 軌道の円を初期描画
-orbitcricle.draw(); // 軌道上の円を初期描画
+orbitcricle.draw(); // 軌道上の円を初期描画 
