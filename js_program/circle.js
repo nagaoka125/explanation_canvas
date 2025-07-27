@@ -45,6 +45,8 @@ function draw() {
     // 角度を更新
     orbitcricle.angle += orbitcricle.v;
 
+    console.log(`Orbit Circle Position: (${orbitcricle.x}, ${orbitcricle.y})`);
+
     window.requestAnimationFrame(draw);
 }
 
