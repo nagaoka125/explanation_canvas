@@ -51,5 +51,3 @@ function draw() {
 canvas_anime.addEventListener("mouseenter", () => {
     requestAnimationFrame(draw);
 });
-
-draw(); // アニメーション開始
