@@ -52,14 +52,12 @@ function draw() {
 
 canvas_circle.addEventListener("dblclick", () => {
     flag = !flag; // フラグを切り替え
+    if (flag) {
+        draw(); // アニメーションを再開
+    } else {
+        ctx_circle.clearRect(0, 0, canvas_circle.width, canvas_circle.height); // キャンバスをクリア
+    }
 });
 
-while (1){
-    draw(); // アニメーション開始
-    if (orbitcricle.angle >= Math.PI * 2) {
-        orbitcricle.angle = 0; // 角度が360度を超えたらリセット
-    }
-    if (!flag) {
-        break;
-    }
-}
+
+draw(); // アニメーション開始
