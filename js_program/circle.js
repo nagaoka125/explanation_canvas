@@ -46,7 +46,7 @@ function draw() {
     // 角度を更新
     orbitcricle.angle += orbitcricle.v;
 
-    requestAnimationFrame(draw);
+    windiw.requestAnimationFrame(draw);
 }
 
 draw();
