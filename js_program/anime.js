@@ -54,7 +54,7 @@ canvas_anime.addEventListener("contextmenu", (event) => {
 });
 
 // canvasからマウスが離れたときにアニメーションを停止
-canvas_anime.addEventListener("mouseout", () => {
+canvas_anime.addEventListener("mouseleave", () => {
     if (animetion) {
         cancelAnimationFrame(animetion);
         animetion = null;

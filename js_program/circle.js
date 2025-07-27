@@ -1,6 +1,8 @@
 const canvas_circle = document.getElementById("canvascircle");
 const ctx_circle = canvas_circle.getContext("2d");
 
+let flag = true;
+
 const orbitcricle = {
     x: canvas_circle.width / 2,
     y: canvas_circle.height / 2,
@@ -37,17 +39,27 @@ function draw() {
     ctx_circle.clearRect(0, 0, canvas_circle.width, canvas_circle.height); 
     // 軌道の円を描画
     orbit.draw();
-    orbitcricle.draw();
     // 軌道上の円の位置を更新
     orbitcricle.x = orbit.x + orbit.radius * Math.cos(orbitcricle.angle);
     orbitcricle.y = orbit.y + orbit.radius * Math.sin(orbitcricle.angle);
     // 軌道上の円を描画
     orbitcricle.draw();
-    
     // 角度を更新
     orbitcricle.angle += orbitcricle.v;
 
     requestAnimationFrame(draw);
 }
 
-draw(); // アニメーション開始
+canvas_circle.addEventListener("dblclick", () => {
+    flag = !flag; // フラグを切り替え
+});
+
+while (1){
+    draw(); // アニメーション開始
+    if (orbitcricle.angle >= Math.PI * 2) {
+        orbitcricle.angle = 0; // 角度が360度を超えたらリセット
+    }
+    if (!flag) {
+        break;
+    }
+}
