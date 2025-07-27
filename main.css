@@ -115,15 +115,13 @@ a{
     }
 
     .logo{
-        width: 50%;
+        text-align: center;
         height: auto;
-        margin: 0 auto;
     }
 
     .canvas_example{
-        width: 50%;
+        text-align: center;
         height: auto;
-        margin: 0 auto;
     }
 
 

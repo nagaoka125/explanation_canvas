@@ -48,4 +48,8 @@ function draw() {
     window.requestAnimationFrame(draw);
 }
 
+canvas_anime.addEventListener("mouseenter", () => {
+    requestAnimationFrame(draw);
+});
+
 draw(); // アニメーション開始

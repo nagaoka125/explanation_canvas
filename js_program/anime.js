@@ -65,9 +65,5 @@ canvas_anime.addEventListener("contextmenu", (event) => {
     }
 });
 
-// canvasからマウスが離れたときにアニメーションを停止
-canvas_anime.addEventListener("mouseleave", () => {
-    cancelAnimationFrame(draw);
-});
 
 square_anime.draw();
