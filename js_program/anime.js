@@ -8,7 +8,7 @@ const square_anime = {
     y: canvas_anime.height / 2,
     vx: 1,
     vy: 1,
-    size: 100,
+    size: 50,
     color: "#56b4e9",
     draw() {
         ctx_anime.fillStyle = this.color;
@@ -38,15 +38,26 @@ canvas_anime.addEventListener("mouseover", () => {
     animetion = requestAnimationFrame(draw);
 });
 
-// canvas内でクリックしたときに速度を増加
-canvas_anime.addEventListener("click", () => {
+// canvas内で左クリックしたときに速度を増加
+canvas_anime.addEventListener("leftclick", (event) => {
     square_anime.vx += 1;
     square_anime.vy += 1;
 });
 
+// canvas内で右クリックしたときに速度を減少
+canvas_anime.addEventListener("rightclick", (event) => {
+    if (square_anime.vx > 1 && square_anime.vy > 1) {
+        square_anime.vx -= 1;
+        square_anime.vy -= 1;
+    }
+});
+
 // canvasからマウスが離れたときにアニメーションを停止
 canvas_anime.addEventListener("mouseout", () => {
-    cancelAnimationFrame(animetion);
+    if (animetion) {
+        cancelAnimationFrame(animetion);
+        animetion = null;
+    }
 });
 
 square_anime.draw();

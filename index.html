@@ -11,13 +11,15 @@
         <h2>概要</h2>
         <p> 本ページでは、canvasについてその概要とjavascriptでの一部の基礎的な使用方法，実際に実行した様子を示し，<br>
             canvasの直線描画, 円描画, テキスト描画, 移動・回転, アニメーションの基礎知識を知ることができます．</p>
-            <img src="images/HTML5_Logo_128.png" alt="HTML5のロゴ">
+            <class="logo">
+                <img src="images/HTML5_Logo_128.png" alt="HTML5のロゴ">
 
         <h2>canvas</h2>
         <p>canvasはHTML5で導入された描画要素で，JavaScriptなどを使用してグラフィックを描画する領域を作ることができます．<br>
             canvasでは図形を描画するだけでなく，画像の読み込みやアニメーションを作製することもできます．<br>
             canvasの座標は左上隅が(0,0)で, X軸が右方向, Y軸が下方向に伸びるようになっています.</p>
-            <img src="images/canvas_example.png" alt="canvasの座標例" width=50% height= 50%>
+            <class="canvas_example">
+                <img src="images/canvas_example.png" alt="canvasの座標例" >
         <canvas id="canvastest" width="500" height="400"></canvas>
         <script src="js_program/canvastest.js"></script>
 
@@ -112,17 +114,17 @@
             <li>cancelAnimationFrame(requestId) - requestAnimationFrameで設定したアニメーションを停止します．</li>
         </ul>
 
-        <p>canvas内でクリックすると1秒ごとに正方形の色が変化し,マウスが離れるとアニメーションが停止されます．</p>
+        <p>canvas内でクリックすると1秒ごとに正方形の色が変化し,もう一度クリックするかマウスが離れるとアニメーションが停止されます．</p>
         </p>
         <canvas id="canvascolor" width="600" height="500"></canvas>
         <script src="js_program/color.js"></script>
 
-        <p>軌道にそって円が動くアニメーション．</p>
+        <p>軌道上を円が動くアニメーション．</p>
         <canvas id="canvascircle" width="600" height="500"></canvas>
         <script src="js_program/circle.js"></script>
 
         <p>canvas内にマウスカーソルが入るアニメーションが開始され,マウスが離れるとアニメーションが停止されます．<br>
-            クリックで動く速度を変更できます.</p>
+            canvas内を左クリックで加速, 右クリックで減速できます.</p>
         <canvas id="canvasanime" width="600" height="500"></canvas>
         <script src="js_program/anime.js"></script>
 
