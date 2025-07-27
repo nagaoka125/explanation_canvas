@@ -53,38 +53,6 @@ function draw() {
     circle = requestAnimationFrame(draw);
 }
 
-// アニメーションを停止する関数
-function stop() {
-    if (circle) {
-        cancelAnimationFrame(circle);
-        circle = null;
-        orbitcricle.v = 0; // アニメーションを停止
-    }
-}
-
-// アニメーションを開始する関数
-function start() {
-    if (!circle) {
-        requestAnimationFrame(draw);
-    }
-}
-
-// canvas内でクリックしたときにアニメーションを開始
-canvas_circle.addEventListener("click", () => {
-    if (orbitcricle.v !== 0) {
-        orbitcricle.v = 0; // アニメーションを停止
-    } 
-    else {
-        orbitcricle.v = 0.05; // アニメーションを開始
-        start();
-    }
-});
-
-// canvasからマウスが離れたときにアニメーションを停止
-canvas_circle.addEventListener("mouseout", () => {
-    orbitcricle.v = 0; // アニメーションを停止
-    stop(); // アニメーションを停止
-});
-
 orbit.draw(); // 軌道の円を初期描画
 orbitcricle.draw(); // 軌道上の円を初期描画 
+draw(); // アニメーション開始

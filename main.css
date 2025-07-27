@@ -60,6 +60,17 @@ ul li{
         padding: 0.5em 0;
 }
 
+pre{
+        color: #0d0443;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 16px;
+        background: #f1f8ff;
+        padding: 1em;
+        margin: 2em auto;
+        border-radius: 10px;
+        border: 2px solid #668ad8;
+}
+
 a{
         color: #064beb;
         text-decoration: none;

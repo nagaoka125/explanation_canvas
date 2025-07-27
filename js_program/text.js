@@ -7,7 +7,7 @@ let y_text = canvas_text.height / 5;
 ctx_text.fillTextStyle = "green";
 ctx_text.fillText("canvas", x_text + 30, y_text + 30);
 ctx_text.font = "30px Arial";
-ctx_text.TextAlign = "center";
+ctx_text.textAlign = "center";
 ctx_text.textBaseline = "middle";
 
 ctx_text.strokeStyle = "red";
