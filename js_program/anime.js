@@ -34,18 +34,18 @@ function draw() {
     animation = requestAnimationFrame(draw);
 }
 // canvas内にマウスが乗ったときにアニメーションを開始
-canvas_anime.addEventListener("mouseover", () => {
+canvas_anime.addEventListener("mouseenter", () => {
     animetion = requestAnimationFrame(draw);
 });
 
 // canvas内で左クリックしたときに速度を増加
-canvas_anime.addEventListener("leftclick", (event) => {
+canvas_anime.addEventListener("click", (event) => {
     square_anime.vx += 1;
     square_anime.vy += 1;
 });
 
 // canvas内で右クリックしたときに速度を減少
-canvas_anime.addEventListener("rightclick", (event) => {
+canvas_anime.addEventListener("contextmenu", (event) => {
     event.preventDefault(); // 右クリックのデフォルトアクションを防ぐ
     if (square_anime.vx > 1 && square_anime.vy > 1) {
         square_anime.vx -= 1;
