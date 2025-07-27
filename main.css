@@ -55,20 +55,22 @@ ul li{
     .logo{
         width: 50%;
         height: auto;
-        margin: 2em 0;
+        margin: 0 auto;
+        padding: auto;
     }
 
     .canvas_example{
         width: 25%;
         height: auto;
-        margin: 2em 0;
+        margin: 0 auto;
+        padding: auto;
     }
 
     canvas{
         border: 5px solid #668ad8;
         width: 50%;
         height: auto;
-        margin: center;
+        margin: 0 auto;
         padding: auto;
     }
 
@@ -78,13 +80,15 @@ ul li{
     .logo{
         width: 50%;
         height: auto;
-        margin: 2em 0;
+        margin: 0 auto;
+        padding: auto;
     }
 
     .canvas_example{
         width: 50%;
         height: auto;
-        margin: 2em 0;
+        margin: 0 auto;
+        padding: auto;
     }
 
 
@@ -92,7 +96,7 @@ ul li{
         border: 5px solid #668ad8;
         width: 100%;
         height: auto;
-        margin: center;
+        margin: 0 auto;
         padding: auto;
     }
     
