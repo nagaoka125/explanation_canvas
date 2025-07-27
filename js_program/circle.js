@@ -6,7 +6,7 @@ const orbitcricle = {
     y: canvas_circle.height / 2,
     radius: 15,
     angle: 0,
-    v: 0.05,
+    v: 0.5,
     color: "#aaf45f",
     draw() {
         ctx_circle.beginPath();
@@ -37,6 +37,7 @@ function draw() {
     ctx_circle.clearRect(0, 0, canvas_circle.width, canvas_circle.height); 
     // 軌道の円を描画
     orbit.draw();
+    orbitcricle.draw();
     // 軌道上の円の位置を更新
     orbitcricle.x = orbit.x + orbit.radius * Math.cos(orbitcricle.angle);
     orbitcricle.y = orbit.y + orbit.radius * Math.sin(orbitcricle.angle);
@@ -44,9 +45,7 @@ function draw() {
     orbitcricle.draw();
     
     // 角度を更新
-    if (orbitcricle.v !== 0){// アニメーションが停止している場合は何もしない
     orbitcricle.angle += orbitcricle.v;
-    }
 
     requestAnimationFrame(draw);
 }
