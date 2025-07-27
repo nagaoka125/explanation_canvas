@@ -11,4 +11,4 @@ ctx_text.strokeStyle = "red";
 ctx_text.strokeText("canvas", 250, 250);
 ctx_text.font = "30px Noto Sans";
 ctx_text.textAlign = "right";
-ctx_text.textBaseline = "underline";
+ctx_text.textBaseline = "alphabetic";

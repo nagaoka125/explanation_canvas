@@ -1,7 +1,7 @@
 const canvas2 = document.getElementById("canvas2");
 const ctx2 = canvas2.getContext("2d");
 
-ctx2.biginPath();
+ctx2.beginPath();
 ctx2.moveTo(50, 50);
 ctx2.lineTo(150, 50);
 ctx2.lineTo(150, 150);

@@ -10,7 +10,7 @@ const orbitcricle = {
     color: "#aaf45f",
     draw() {
         ctx_circle.beginPath();
-        ctx_circle.arc(this.x, this.y, this.radius, this.angle, Math.PI * 2);
+        ctx_circle.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         ctx_circle.fillStyle = this.color;
         ctx_circle.fill();
         ctx_circle.closePath();
@@ -21,11 +21,10 @@ const orbit = {
     x: canvas_circle.width / 2,
     y: canvas_circle.height / 2,
     radius: 100,
-    angle: 0,
     color: "#a9a9a9",
     draw() {
         ctx_circle.beginPath();
-        ctx_circle.arc(this.x, this.y, this.radius, this.angle, Math.PI * 2);
+        ctx_circle.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         ctx_circle.strokeStyle = this.color;
         ctx_circle.lineWidth = 1;
         ctx_circle.stroke();

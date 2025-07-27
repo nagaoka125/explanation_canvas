@@ -3,7 +3,7 @@ const ctx_anime = canvas_anime.getContext("2d");
 
 let animetion;
 
-const square = {
+const square_anime = {
     x: canvas_anime.width / 2,
     y: canvas_anime.height / 2,
     vx: 1,
@@ -20,16 +20,16 @@ const square = {
 // アニメーションを開始する関数
 function draw() {
     ctx_anime.clearRect(0, 0, canvas_anime.width, canvas_anime.height);
-    square.draw();
-    square.x += square.vx;
-    square.y += square.vy;
+    square_anime.draw();
+    square_anime.x += square_anime.vx;
+    square_anime.y += square_anime.vy;
 
     // canvasの端に到達したら反転
-    if (square.x + square.size > canvas_anime.width - square.size || square.x < square.size) {
-        square.vx = -square.vx; // x方向の速度を反転
+    if (square_anime.x + square_anime.size > canvas_anime.width - square_anime.size || square_anime.x < square_anime.size) {
+        square_anime.vx = -square_anime.vx; // x方向の速度を反転
     }
-    if (square.y + square.size > canvas_anime.height - square.size || square.y < square.size) {
-        square.vy = -square.vy; // y方向の速度を反転
+    if (square_anime.y + square_anime.size > canvas_anime.height - square_anime.size || square_anime.y < square_anime.size) {
+        square_anime.vy = -square_anime.vy; // y方向の速度を反転
     }
     animation = requestAnimationFrame(draw);
 }
@@ -40,8 +40,8 @@ canvas_anime.addEventListener("mouseover", () => {
 
 // canvas内でクリックしたときに速度を増加
 canvas_anime.addEventListener("click", () => {
-    square.vx += 1;
-    square.vy += 1;
+    square_anime.vx += 1;
+    square_anime.vy += 1;
 });
 
 // canvasからマウスが離れたときにアニメーションを停止
@@ -49,4 +49,4 @@ canvas_anime.addEventListener("mouseout", () => {
     cancelAnimationFrame(animetion);
 });
 
-square.draw();
+square_anime.draw();
