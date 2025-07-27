@@ -34,29 +34,21 @@ const orbit = {
 
 // アニメーションを開始する関数
 function draw() {
-    try{
-        ctx_circle.clearRect(0, 0, canvas_circle.width, canvas_circle.height); 
-        // 軌道の円を描画
-        orbit.draw();
-        // 軌道上の円の位置を更新
-        orbitcricle.x = orbit.x + orbit.radius * Math.cos(orbitcricle.angle);
-        orbitcricle.y = orbit.y + orbit.radius * Math.sin(orbitcricle.angle);
-        // 軌道上の円を描画
-        orbitcricle.draw();
-        // 角度を更新
-        orbitcricle.angle += orbitcricle.v;
-        // 角度が360度を超えたらリセット
-        if (orbitcricle.angle >= Math.PI * 2) {
-            orbitcricle.angle = 0;
-        }
-
-        console.log(`Orbit Circle Position: (${orbitcricle.x}, ${orbitcricle.y})`);
-
-        window.requestAnimationFrame(draw);
+    ctx_circle.clearRect(0, 0, canvas_circle.width, canvas_circle.height); 
+    // 軌道の円を描画
+    orbit.draw();
+    // 軌道上の円の位置を更新
+    orbitcricle.x = orbit.x + orbit.radius * Math.cos(orbitcricle.angle);
+    orbitcricle.y = orbit.y + orbit.radius * Math.sin(orbitcricle.angle);
+    // 軌道上の円を描画
+    orbitcricle.draw();
+    // 角度を更新
+    orbitcricle.angle += orbitcricle.v;
+    // 角度が360度を超えたらリセット
+    if (orbitcricle.angle >= Math.PI * 2) {
+        orbitcricle.angle = 0;
     }
-    catch (error) {
-        console.error("An error occurred during the animation:", error);
-    }
+    window.requestAnimationFrame(draw);
 }
 
 draw();
