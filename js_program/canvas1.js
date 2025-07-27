@@ -1,5 +1,5 @@
 const canvas1 = document.getElementById("canvas1");
-const ctx = canvas.getContext("2d");
+const ctx = canvas1.getContext("2d");
 
 ctx.fillStyle = "green";
 ctx.fillRect(50, 50, 100, 100);
