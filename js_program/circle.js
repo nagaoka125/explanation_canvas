@@ -51,3 +51,7 @@ function draw() {
 canvas_anime.addEventListener("mouseenter", () => {
     requestAnimationFrame(draw);
 });
+
+canvas_circle.addEventListener("mouseout", (event) => {
+    requestAnimationFrame(draw);
+});
