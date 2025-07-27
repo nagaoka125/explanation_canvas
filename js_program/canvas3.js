@@ -18,6 +18,7 @@ ctx3.closePath();
 
 ctx3.beginPath();
 ctx3.fillStyle = "yellow";
-ctx3.arcTo(x3 + 90, y3 + 90, x3 + 70, y3 + 70, 30);
+ctx3.arcTo(x3 + 90, y3 + 90, x3 + 70, y3 + 70, 20);
+ctx3.lineTo(x3 + 90, y3 + 90);
 ctx3.stroke();
 ctx3.closePath();
