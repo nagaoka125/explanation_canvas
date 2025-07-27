@@ -1,9 +1,9 @@
 const canvas1 = document.getElementById("canvas1");
-const ctx = canvas1.getContext("2d");
+const ctx1 = canvas1.getContext("2d");
 
-ctx.fillStyle = "green";
-ctx.fillRect(50, 50, 100, 100);
+ctx1.fillStyle = "green";
+ctx1.fillRect(50, 50, 100, 100);
 
-ctx.strokeStyle = "red";
-ctx.lineWidth = 5;
-ctx.strokeRect(250, 250, 100, 100)
+ctx1.strokeStyle = "red";
+ctx1.lineWidth = 5;
+ctx1.strokeRect(250, 250, 100, 100)
