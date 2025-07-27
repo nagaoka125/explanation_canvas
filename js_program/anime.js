@@ -58,8 +58,6 @@ canvas_anime.addEventListener("mouseout", () => {
     if (animetion) {
         cancelAnimationFrame(animetion);
         animetion = null;
-        square_anime.vx = 1;
-        square_anime.vy = 1;
     }
 });
 

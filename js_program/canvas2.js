@@ -13,9 +13,9 @@ ctx2.fill();
 ctx2.closePath();
 
 ctx2.beginPath();
-ctx2.moveTo(x2 + 50, y2 + 50);
-ctx2.lineTo(x2 + 80, y2 + 80);
-ctx2.lineTo(x2 + 80, y2 + 110);
-ctx2.lineTo(x2 + 50, y2 + 50);
+ctx2.moveTo(x2 + 100, y2 + 100);
+ctx2.lineTo(x2 + 130, y2 + 130);
+ctx2.lineTo(x2 + 130, y2 + 160);
+ctx2.lineTo(x2 + 100, y2 + 100);
 ctx2.stroke();
 ctx2.closePath();

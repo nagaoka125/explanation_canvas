@@ -83,7 +83,7 @@ canvas_circle.addEventListener("click", () => {
 // canvasからマウスが離れたときにアニメーションを停止
 canvas_circle.addEventListener("mouseout", () => {
     orbitcricle.v = 0; // アニメーションを停止
-    stap(); // アニメーションを停止
+    stop(); // アニメーションを停止
 });
 
 orbit.draw(); // 軌道の円を初期描画
