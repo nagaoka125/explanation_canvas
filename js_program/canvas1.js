@@ -1,4 +1,4 @@
-const canvas = document.getElementById("canvas1");
+const canvas1 = document.getElementById("canvas1");
 const ctx = canvas.getContext("2d");
 
 ctx.fillStyle = "green";
