@@ -8,7 +8,7 @@ const square_anime = {
     y: canvas_anime.height / 2,
     vx: 1,
     vy: 1,
-    size: 50,
+    size: canvas_anime.width / 10,
     color: "#56b4e9",
     draw() {
         ctx_anime.fillStyle = this.color;
