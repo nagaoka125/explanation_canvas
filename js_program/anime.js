@@ -6,8 +6,8 @@ let animetion;
 const square_anime = {
     x: canvas_anime.width / 2,
     y: canvas_anime.height / 2,
-    vx: 1,
-    vy: 1,
+    vx: 0,
+    vy: 0,
     size: canvas_anime.width / 10,
     color: "#56b4e9",
     draw() {
@@ -46,6 +46,7 @@ canvas_anime.addEventListener("leftclick", (event) => {
 
 // canvas内で右クリックしたときに速度を減少
 canvas_anime.addEventListener("rightclick", (event) => {
+    event.preventDefault(); // 右クリックのデフォルトアクションを防ぐ
     if (square_anime.vx > 1 && square_anime.vy > 1) {
         square_anime.vx -= 1;
         square_anime.vy -= 1;

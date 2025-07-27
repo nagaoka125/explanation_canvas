@@ -1,8 +1,8 @@
 const canvas_text = document.getElementById("canvastext");
 const ctx_text = canvas_text.getContext("2d");
 
-let x_text = canvas_text.width / 10;
-let y_text = canvas_text.height / 10;
+let x_text = canvas_text.width / 5;
+let y_text = canvas_text.height / 5;
 
 ctx_text.fillTextStyle = "green";
 ctx_text.fillText("canvas", x_text + 30, y_text + 30);

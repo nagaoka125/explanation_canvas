@@ -1,8 +1,8 @@
 const canvas2 = document.getElementById("canvas2");
 const ctx2 = canvas2.getContext("2d");
 
-let x2 = canvas2.width / 10;
-let y2 = canvas2.height / 10;
+let x2 = canvas2.width / 5;
+let y2 = canvas2.height / 5;
 
 ctx2.beginPath();
 ctx2.moveTo(x2, y2);
