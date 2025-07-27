@@ -1,20 +1,20 @@
-const canvas = document.getElementById("canvascolor");
-const ctx = canvas.getContext("2d");
+const canvas_color = document.getElementById("canvascolor");
+const ctx_color = canvas_color.getContext("2d");
 
 let change;
 
 const square = {
-    x: canvas.width / 2 - 25,
-    y: canvas.height / 2 - 25,
+    x: canvas_color.width / 2 - 25,
+    y: canvas_color.height / 2 - 25,
     size: 50,
     color: "#000000",
     strokeColor: "#ffffff",
     draw() {
-        ctx.fillStyle = this.color;
-        ctx.fillRect(this.x, this.y, this.size, this.size);
-        ctx.strokeStyle = this.strokeColor;
-        ctx.lineWidth = 2;
-        ctx.strokeRect(this.x, this.y, this.size, this.size);
+        ctx_color.fillStyle = this.color;
+        ctx_color.fillRect(this.x, this.y, this.size, this.size);
+        ctx_color.strokeStyle = this.strokeColor;
+        ctx_color.lineWidth = 2;
+        ctx_color.strokeRect(this.x, this.y, this.size, this.size);
     },
 }
 
@@ -29,7 +29,7 @@ function changeColor() {
 }
 
 // canvas内をクリックしたときに色の変更を開始
-canvas.addEventListener("click", () => {
+canvas_color.addEventListener("click", () => {
     if (change) {
         clearInterval(change);
         change = null;
@@ -39,7 +39,7 @@ canvas.addEventListener("click", () => {
 });
 
 // canvasからマウスが離れたときに色の変更を停止
-canvas.addEventListener("mouseout", () => {
+canvas_color.addEventListener("mouseout", () => {
     clearInterval(change);
 });
 

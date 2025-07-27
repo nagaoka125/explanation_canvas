@@ -1,14 +1,14 @@
-const canvas = document.getElementById("canvastext");
-const ctx = canvas.getContext("2d");
+const canvas_text = document.getElementById("canvastext");
+const ctx_text = canvas_text.getContext("2d");
 
-ctx.fillTextStyle = "green";
-ctx.fillText("canvas", 50, 50);
-ctx.font = "20px Arial";
-ctx.TextAlign = "center";
-ctx.textBaseline = "middle";
+ctx_text.fillTextStyle = "green";
+ctx_text.fillText("canvas", 50, 50);
+ctx_text.font = "20px Arial";
+ctx_text.TextAlign = "center";
+ctx_text.textBaseline = "middle";
 
-ctx.strokeStyle = "red";
-ctx.strokeText("canvas", 250, 250);
-ctx.font = "20px Noto Sans";
-ctx.textAlign = "right";
-ctx.textBaseline = "underline";
+ctx_text.strokeStyle = "red";
+ctx_text.strokeText("canvas", 250, 250);
+ctx_text.font = "20px Noto Sans";
+ctx_text.textAlign = "right";
+ctx_text.textBaseline = "underline";

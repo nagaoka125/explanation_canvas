@@ -1,52 +1,52 @@
-const canvas = document.getElementById("canvasanime");
-const ctx = canvas.getContext("2d");
+const canvas_anime = document.getElementById("canvasanime");
+const ctx_anime = canvas_anime.getContext("2d");
 
 let animetion;
 
 const square = {
-    x: canvas.width / 2,
-    y: canvas.height / 2,
+    x: canvas_anime.width / 2,
+    y: canvas_anime.height / 2,
     vx: 1,
     vy: 1,
     size: 100,
     color: "#56b4e9",
     draw() {
-        ctx.fillStyle = this.color;
-        ctx.fillRect(this.x, this.y, this.size, this.size);
+        ctx_anime.fillStyle = this.color;
+        ctx_anime.fillRect(this.x, this.y, this.size, this.size);
     },
 
 };
 
 // アニメーションを開始する関数
 function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx_anime.clearRect(0, 0, canvas_anime.width, canvas_anime.height);
     square.draw();
     square.x += square.vx;
     square.y += square.vy;
 
     // canvasの端に到達したら反転
-    if (square.x + square.size > canvas.width - square.size || square.x < square.size) {
+    if (square.x + square.size > canvas_anime.width - square.size || square.x < square.size) {
         square.vx = -square.vx; // x方向の速度を反転
     }
-    if (square.y + square.size > canvas.height - square.size || square.y < square.size) {
+    if (square.y + square.size > canvas_anime.height - square.size || square.y < square.size) {
         square.vy = -square.vy; // y方向の速度を反転
     }
     animation = requestAnimationFrame(draw);
 }
 // canvas内にマウスが乗ったときにアニメーションを開始
-canvas.addEventListener("mouseover", () => {
+canvas_anime.addEventListener("mouseover", () => {
     cancelAnimationFrame(animetion);
     animetion = requestAnimationFrame(draw);
 });
 
 // canvas内でクリックしたときに速度を増加
-canvas.addEventListener("click", () => {
+canvas_anime.addEventListener("click", () => {
     square.vx += 1;
     square.vy += 1;
 });
 
 // canvasからマウスが離れたときにアニメーションを停止
-canvas.addEventListener("mouseout", () => {
+canvas_anime.addEventListener("mouseout", () => {
     cancelAnimationFrame(animetion);
 });
 
