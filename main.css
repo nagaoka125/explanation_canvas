@@ -65,6 +65,8 @@ ul li{
 
     canvas{
         border: 5px solid #668ad8;
+        width: 90%;
+        display: block;
         height: auto;
         margin: 0 auto;
     }
@@ -87,6 +89,8 @@ ul li{
 
     canvas{
         border: 5px solid #668ad8;
+        width: 400px;
+        display: block;
         height: auto;
         margin: 0 auto;
     }
