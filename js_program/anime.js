@@ -35,7 +35,6 @@ function draw() {
 }
 // canvas内にマウスが乗ったときにアニメーションを開始
 canvas_anime.addEventListener("mouseover", () => {
-    cancelAnimationFrame(animetion);
     animetion = requestAnimationFrame(draw);
 });
 

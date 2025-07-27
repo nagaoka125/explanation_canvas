@@ -4,7 +4,7 @@ const ctx_circle = canvas_circle.getContext("2d");
 const orbitcricle = {
     x: canvas_circle.width / 2,
     y: canvas_circle.height / 2,
-    radius: 100,
+    radius: 20,
     angle: 0,
     v: 0.05,
     color: "#aaf45f",
